@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Favorites • Book Finder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>⭐ Favorites</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="favorites.html" class="active">Favorites</a>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌗</button>
+    </nav>
+  </header>
+
+  <main class="app">
+    <div class="row-between">
+      <p id="fav-count">0 items</p>
+      <button id="clear-favs" class="danger">Clear All</button>
+    </div>
+
+    <section id="fav-list" class="grid" aria-label="Favorite books"></section>
+
+    <dialog id="details-modal" class="modal" aria-modal="true" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-desc">
+      <form method="dialog" class="modal-card">
+        <button class="close" aria-label="Close">✖</button>
+        <div id="modal-body"></div>
+      </form>
+    </dialog>
+
+    <div id="toast" class="toast" role="alert" aria-live="assertive"></div>
+  </main>
+
+  <footer class="footer">
+    <small>Your saved books live in your browser (localStorage).</small>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Page-specific bootstrap
+    document.addEventListener('DOMContentLoaded', () => {
+      window.BF.initTheme();
+      window.BF.renderFavoritesPage();
+    });
+  </script>
+</body>
+</html>

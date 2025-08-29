@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📚 Book Finder</h1>
+    <input type="text" id="searchInput" placeholder="Search for a book...">
+    <button id="searchBtn">Search</button>
+  </header>
+
+  <main id="bookList"></main>
+
+  <!-- Modal -->
+  <div id="bookModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <img id="modalCover" src="" alt="Book Cover">
+      <h2 id="modalTitle"></h2>
+      <h3 id="modalAuthor"></h3>
+      <p id="modalDesc"></p>
+
+      <div class="actions">
+        <button id="favBtn">⭐ Add to Favorites</button>
+        <button id="feedbackBtn">📝 Write Feedback</button>
+        <button id="buyBtn">📚 Where to Buy</button>
+        <button id="reviewsBtn">⭐ Ratings & Reviews</button>
+        <button id="shareBtn">🔗 Share</button>
+      </div>
+
+      <!-- Feedback form -->
+      <div id="feedbackForm" class="hidden">
+        <h3>Write to Author / Share Feedback</h3>
+        <input type="text" id="fbName" placeholder="Your Name">
+        <input type="email" id="fbEmail" placeholder="Your Email">
+        <textarea id="fbMessage" placeholder="Your Message"></textarea>
+        <button id="submitFeedback">Submit</button>
+      </div>
+
+      <!-- Buy links -->
+      <div id="buyLinks" class="hidden">
+        <h3>Where to Buy</h3>
+        <ul id="linksList"></ul>
+        <p id="lowestPrice"></p>
+      </div>
+
+      <!-- Reviews Section -->
+      <div id="reviewsSection" class="hidden">
+        <h3>Ratings & Reviews</h3>
+        <div id="reviewsList"></div>
+
+        <div id="reviewForm">
+          <label for="rating">Your Rating:</label>
+          <select id="rating">
+            <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+            <option value="4">⭐⭐⭐⭐ (4)</option>
+            <option value="3">⭐⭐⭐ (3)</option>
+            <option value="2">⭐⭐ (2)</option>
+            <option value="1">⭐ (1)</option>
+          </select>
+
+          <textarea id="reviewText" placeholder="Write your review..."></textarea>
+          <button id="submitReview">Submit Review</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
